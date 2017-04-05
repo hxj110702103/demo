@@ -1,0 +1,23 @@
+#server setting
+server:
+  port: 8085
+
+#spring profiles
+spring:
+  profiles:
+  active: local
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/cesp?useUnicode=yes&characterEncoding=UTF-8"
+    username: Cesp
+    password: CespCesp1!
+    max-active: 20
+    initial-size: 3
+    min-idle: 3
+    max-wait: 60000
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    validation-query: select 1
+    test-while-idle: true
+    test-on-borrow: true
+    test-on-return: false

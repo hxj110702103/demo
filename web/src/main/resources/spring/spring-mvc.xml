@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+   <!--1.启动Spring MVC的注解功能，①请求映射：@RequestMapping注解②请求处理（哪个controller的哪个方法来处理当前请求）③支持自定义方法参数和返回值（很酷）：@RequestBody注解等 -->
+    <mvc:annotation-driven />
+
+    <!-- 2.对web包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
+    <context:component-scan base-package="com.han.demo.*.controller"/>
+
+    <!--3.对模型视图名称的解析，即在模型视图名称前后加前后缀-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/pages/"></property>
+        <property name="suffix" value=".html"></property>
+    </bean>
+
+</beans>

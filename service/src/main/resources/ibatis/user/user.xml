@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+        "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="com.han.demo.user.dao.ibatis.UserDaor">
+    <typeAlias alias="user" type="com.han.demo.user.model.User"/>
+
+    <insert id="create" parameterClass="com.han.demo.user.model.User">
+        insert into user (name, password, email, phone) values(#name#, #password#, #email#, #phone#)
+        <selectKey resultClass="java.lang.Integer" keyProperty="userId">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+
+    <select id="getById" parameterClass="java.lang.Integer" resultClass="com.han.demo.user.model.User">
+        select * from user
+        where user_id = #userId#
+    </select>
+
+</sqlMap>
