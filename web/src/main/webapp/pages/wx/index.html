@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <link type="text/css" href="https://res.wx.qq.com/open/libs/weui/1.1.0/weui.min.css" rel="stylesheet">
+    <style type="text/css">
+        .container {
+            font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+            color: #222;
+        }
+        .user_info{
+            height: 25px;
+            line-height: 25px;
+            background-color: #f8f8f8;
+            font-size: 12px;
+            padding: 0 20px;
+            color: #999;
+        }
+        .banner {
+            position: relative;
+            margin-bottom: 18px;
+            line-height: 1;
+        }
+        .carousel-indicators {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 5;
+            margin: 0;
+            list-style: none;
+        }
+        .carousel-indicators li {
+            display: block;
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+            text-indent: -999px;
+            border-radius: 5px;
+        }
+        .carousel-indicators .active {
+            color: #C81623;
+            background-color: #fff;
+        }
+        .carousel-inner {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 150px;
+        }
+        .carousel-inner .active {
+            display: block!important;
+        }
+        .carousel-inner .item {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            transition: 0.6s ease-in-out left;
+        }
+        .carousel-inner .item img {
+            width: 100%
+        }
+        .repairs_info {
+            height:300px;
+            margin: 100px 0px 0px 50px;
+            overflow: hidden;
+        }
+        .repairs_info .info_item {
+            float: left;
+            width: 120px;
+            font-size: 20px;
+        }
+        .repairs_info .info_title,.repairs_icon  {
+            text-align: center;
+        }
+        @font-face {
+            font-family: 'iconfont';  /* project id 271690 */
+            src: url('//at.alicdn.com/t/font_xkb5mvevb0veipb9.eot');
+            src: url('//at.alicdn.com/t/font_xkb5mvevb0veipb9.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_xkb5mvevb0veipb9.woff') format('woff'),
+            url('//at.alicdn.com/t/font_xkb5mvevb0veipb9.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_xkb5mvevb0veipb9.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:70px;font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page__hd">
+        <div class="user_info">欢迎回来hxj18233138990</div>
+        <div class="banner">
+            <ol class="carousel-indicators">
+                <li data-target="" data-slide-to="0" class="active"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="active item">
+                    <img src="../../images/slide-4.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page_bd">
+        <div class="repairs_info">
+            <div class="info_item">
+                <div class="repairs_icon">
+                    <i class="iconfont">&#xe605;</i>
+                </div>
+                <div class="info_title">报修</div>
+            </div>
+            <div class="info_item">
+                <div class="repairs_icon">
+                     <i class="iconfont">&#xe602;</i>
+                </div>
+                <div class="info_title">查询</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-tabbar">
+        <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+            <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="javascript:;" class="weui-tabbar__item">
+                <span style="display: inline-block;position: relative;">
+                    <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                    <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span>
+                </span>
+            <p class="weui-tabbar__label">我</p>
+        </a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+
+    })
+</script>
+</body>
+</html>

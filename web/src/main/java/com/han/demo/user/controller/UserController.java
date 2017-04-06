@@ -18,4 +18,18 @@ public class UserController {
         System.out.println(1111111);
         return "wx/profile";
     }
+
+    @RequestMapping(value = "index")
+    public String index(User user, ModelMap modelMap) {
+        modelMap.addAttribute("user", user);
+        System.out.println(1111111);
+        return "wx/index";
+    }
+
+    @RequestMapping(value = "repair")
+    public String repair(User user, ModelMap modelMap) {
+        modelMap.addAttribute("user", user);
+        System.out.println(1111111);
+        return "wx/repair";
+    }
 }
