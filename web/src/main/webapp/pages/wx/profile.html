@@ -88,24 +88,23 @@
             border-bottom: 3px solid #35baf6;
         }
         .select_type {
-            padding-top: 100px;
-            height: 200px;
+            height:300px;
+            margin: 50px 50px;
+            overflow: hidden;
+        }
+        .select_type .info_item {
+            float: left;
+            width: 50%;
+            font-size: 20px;
+        }
+        .select_type .info_title,.select_type .info_icon  {
             text-align: center;
         }
-        .select_type i {
-            padding-right: 20px;
-        }
-        .select_type a {
-            background-color: #f8f8f8;
-            color: #222;
-            width: 200px;
-            height: 38px;
-            line-height: 38px;
-            box-shadow: 2px 2px 5px #969696;
+        .select_type .info_icon i {
+            font-size: 80px;
         }
         .select_type .selected {
-            background-color: #35baf6;
-            color: #fff;
+            color: #35baf6;
         }
        .weui-btn+.weui-btn {
            margin-top:20px;
@@ -151,11 +150,11 @@
         }
         @font-face {
             font-family: 'iconfont';  /* project id 271690 */
-            src: url('//at.alicdn.com/t/font_aey8118gq711nhfr.eot');
-            src: url('//at.alicdn.com/t/font_aey8118gq711nhfr.eot?#iefix') format('embedded-opentype'),
-            url('//at.alicdn.com/t/font_aey8118gq711nhfr.woff') format('woff'),
-            url('//at.alicdn.com/t/font_aey8118gq711nhfr.ttf') format('truetype'),
-            url('//at.alicdn.com/t/font_aey8118gq711nhfr.svg#iconfont') format('svg');
+            src: url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.eot');
+            src: url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.woff') format('woff'),
+            url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.svg#iconfont') format('svg');
         }
         .iconfont{
             font-family:"iconfont" !important;
@@ -176,7 +175,7 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="active item">
-                        <img src="../../images/slide-4.jpg">
+                        <img src="../../images/banner.jpg" height="150px">
                     </div>
                 </div>
             </div>
@@ -194,10 +193,19 @@
                 </div>
 
                 <div class="info_content select_type" data-type="type">
-                    <a class="weui-btn weui-btn_primary selected" data-type="profile"><i class="iconfont">&#xe606;</i>个人用户</a>
-                    <a class="weui-btn weui-btn_primary" data-type="customer"><i class="iconfont">&#xe607;</i>企业用户</a>
+                    <div class="info_item selected" data-type="profile">
+                        <div class="info_icon">
+                            <i class="iconfont">&#xe61f;</i>
+                        </div>
+                        <div class="info_title">个人用户</div>
+                    </div>
+                    <div class="info_item" data-type="customer">
+                        <div class="info_icon">
+                            <i class="iconfont">&#xe620;</i>
+                        </div>
+                        <div class="info_title">企业用户</div>
+                    </div>
                 </div>
-
                 <div class="info_content info_complete" data-type="info" style="display: none;">
                     <div class="info_data" data-type="profile">
                         <div class="weui-cell">
@@ -236,7 +244,7 @@
 
                     <div class="info_data" data-type="customer"  style="display: none;">
                         <div class="weui-cell">
-                            <div class="weui-cell__hd"><label class="weui-label">邀请码</label></div>
+                            <div class="weui-cell__hd"><label class="weui-label"><i class="iconfont">&#xe601;</i></label></div>
                             <div class="weui-cell__bd">
                                 <input class="weui-input" type="number" pattern="[0-9]*" placeholder="邀请码">
                             </div>
@@ -250,14 +258,14 @@
                             <div class="cust_info">店铺名称：上海市莘庄店</div>
                         </div>
                         <div class="weui-cell">
-                            <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                            <div class="weui-cell__hd"><label class="weui-label"><i class="iconfont">&#xe619;</i></label></div>
                             <div class="weui-cell__bd">
                                 <input class="weui-input" type="number" pattern="[0-9]*" placeholder="姓名">
                             </div>
                         </div>
                         <div class="weui-cell">
                             <div class="weui-cell__hd">
-                                <label class="weui-label">手机号</label>
+                                <label class="weui-label"><i class="iconfont">&#xe60b;</i></label>
                             </div>
                             <div class="weui-cell__bd">
                                 <input class="weui-input" type="tel" placeholder="手机号">
@@ -273,8 +281,8 @@
         </div>
 
         <div class="weui-tabbar">
-            <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
-
+            <a href="javascript:;" class="weui-tabbar__item">
+                <i class="iconfont">&#xe61a;</i>
                 <p class="weui-tabbar__label">首页</p>
             </a>
             <a href="javascript:;" class="weui-tabbar__item">
@@ -296,8 +304,8 @@
         })
 
         //切换类型
-        $('.select_type a').click(function() {
-            $('.select_type a').removeClass('selected');
+        $('.select_type .info_item').click(function() {
+            $('.select_type .info_item').removeClass('selected');
             $(this).addClass('selected');
             $('.info_content .info_data').hide();
             $('.info_content .info_data[data-type='+$(this).data('type')+']').show();

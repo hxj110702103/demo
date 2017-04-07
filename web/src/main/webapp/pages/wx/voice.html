@@ -67,18 +67,74 @@
         .carousel-inner .item img {
             width: 100%
         }
-        .repairs_info {
-            height:300px;
-            margin: 100px 50px;
+        .repair_btn {
+            width: 100%;
+            position: absolute;
+            bottom: 80px;
+            overflow: hidden;
+            padding: 10px 0px;
+        }
+        .repair_btn .item_btn {
+            float: left;
+            width: 33%;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+        }
+        .repair_btn i {
+            font-size: 40px;
+        }
+        .voice_content {
+            height: 120px;
+        }
+        .none_voice {
+            text-align: center;
+        }
+        .voice_item {
+            padding:5px 20px;
             overflow: hidden;
         }
-        .repairs_info .info_item {
+        .voice_item .head_photo{
+            width: 40px;
+            height: 40px;
+            border-radius:50%;
+            overflow:hidden;
             float: left;
-            width: 50%;
-            font-size: 20px;
         }
-        .repairs_info .info_title,.repairs_icon  {
-            text-align: center;
+        .voice_item .voice_show {
+            position: relative;
+            overflow: hidden;
+            height: 30px;
+            width: 100px;
+            padding: 5px 10px;
+        }
+        .voice_item i.voice_icon {
+            font-size: 15px;
+            position: absolute;
+            left: 20px;
+            top: 9px;
+        }
+        .voice_item i.delete_icon {
+            font-size: 14px;
+            position: absolute;
+            right: 4px;
+            top: -3px;
+            color: #C81623;
+        }
+        .voice_item img {
+            float: left;
+            height: 30px;
+            width: 100px;
+        }
+        textarea {
+            background-color: #f8f8f8;
+            font-size: 12px;
+        }
+        .repair_desc .desc_title {
+            padding: 5px 20px;
+        }
+        .weui-cell:before {
+            border-top: none;
         }
         @font-face {
             font-family: 'iconfont';  /* project id 271690 */
@@ -90,7 +146,7 @@
         }
         .iconfont{
             font-family:"iconfont" !important;
-            font-size:80px;font-style:normal;
+            font-size:20px;font-style:normal;
             -webkit-font-smoothing: antialiased;
             -webkit-text-stroke-width: 0.2px;
             -moz-osx-font-smoothing: grayscale;
@@ -114,30 +170,57 @@
     </div>
 
     <div class="page_bd">
-        <div class="repairs_info">
-            <div class="info_item">
-                <div class="repairs_icon">
-                    <i class="iconfont" style="color: #35baf6;">&#xe605;</i>
+        <div class="voice_content">
+            <div class="voice_list" style="display: none;">
+                <div class="voice_item">
+                    <img class="head_photo" src="../../images/banner.jpg"/>
+                    <div class="voice_show">
+                        <img src="../../images/WX-H5-36.png"/>
+                        <i class="iconfont voice_icon">&#xe615;</i>
+                        <i class="iconfont delete_icon">&#xe616;</i>
+                    </div>
                 </div>
-                <div class="info_title">报修</div>
+                <div class="voice_item">
+                    <img class="head_photo" src="../../images/banner.jpg"/>
+                    <div class="voice_show" style="width:200px;">
+                        <img src="../../images/WX-H5-36.png" style="width: 200px"/>
+                        <i class="iconfont voice_icon">&#xe615;</i>
+                        <i class="iconfont delete_icon">&#xe616;</i>
+                    </div>
+                </div>
             </div>
-            <div class="info_item">
-                <div class="repairs_icon">
-                     <i class="iconfont">&#xe602;</i>
+            <div class="none_voice">
+                <i class="iconfont" style="font-size: 60px;">&#xe614;</i>
+            </div>
+        </div>
+        <div class="repair_desc">
+            <div class="desc_title">报修备注</div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="输入关键词" rows="6"></textarea>
                 </div>
-                <div class="info_title">查询</div>
+            </div>
+        </div>
+        <div class="repair_btn">
+            <div class="item_btn">
+                <img src="../../images/WX-H5-09.png" width="32px"/>
+            </div>
+            <div class="item_btn voice_ing">
+                <img src="../../images/WX-H5-08.png" width="60px"/>
+            </div>
+            <div class="item_btn confirm_repair">
+                <img src="../../images/WX-H5-07.png" width="32px"/>
             </div>
         </div>
     </div>
-
     <div class="weui-tabbar">
         <a href="javascript:;" class="weui-tabbar__item">
-            <i class="iconfont" style="font-size: 20px;">&#xe61a;</i>
+            <i class="iconfont">&#xe61a;</i>
             <p class="weui-tabbar__label">首页</p>
         </a>
         <a href="javascript:;" class="weui-tabbar__item">
                 <span style="display: inline-block;position: relative;">
-                    <i class="iconfont" style="font-size: 20px;">&#xe619;</i>
+                    <i class="iconfont">&#xe619;</i>
                 </span>
             <p class="weui-tabbar__label">我</p>
         </a>
@@ -145,8 +228,13 @@
 </div>
 <script type="text/javascript">
     $(function() {
-        $('.info_item').click(function() {
-            window.location.href='/user/repair.do'
+        $('.repair_btn .voice_ing').click(function() {
+            $('.voice_content .none_voice').hide();
+            $('.voice_content .voice_list').show();
+        })
+
+        $('.confirm_repair').click(function() {
+            window.location.href='/user/addAddress.do'
         })
     })
 </script>

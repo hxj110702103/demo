@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <link type="text/css" href="https://res.wx.qq.com/open/libs/weui/1.1.0/weui.min.css" rel="stylesheet">
+    <style type="text/css">
+        .container {
+            font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+            color: #222;
+            font-size: 14px;
+        }
+        input {
+            font-size: 14px;
+        }
+        @font-face {
+            font-family: 'iconfont';  /* project id 271690 */
+            src: url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.eot');
+            src: url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.woff') format('woff'),
+            url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:20px;font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .add_address .add_header {
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+        }
+        .add_address .add_header .head_retreat {
+            padding:0px 15px;
+        }
+        .add_address .add_header i {
+            font-size: 16px;
+            float: left;
+        }
+        .add_address .add_header .head_title {
+            margin:0px 80px;
+            float: left;
+            text-align: center;
+        }
+        .add_address .head_right {
+            float: left;
+            width: 60px;
+            text-align: center;
+        }
+        .add_address .head_bg {
+            background-color: #f8f8f8;
+            height: 10px;
+            width:100%;
+        }
+        .weui-label {
+            width:50px;
+        }
+        .weui-cells {
+            margin-top:0;
+        }
+        .weui-cells:before {
+            border-top: none;
+        }
+        .weui-cells .select_address {
+            font-size: 14px;
+            position: absolute;
+            top: 4px;
+            right: 0px;
+        }
+        .weui-cells .weui-cell__bd {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="add_address">
+        <div class="add_header">
+            <div class="head_retreat"><i class="iconfont">&#xe617;</i></div>
+            <div class="head_title">新增地址</div>
+            <div class="head_right">保存</div>
+        </div>
+        <div class="head_bg"></div>
+        <div class="page_bg">
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label"><i class="iconfont">&#xe619;</i></label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="收货人姓名">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label"><i class="iconfont">&#xe60b;</i></label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="tel" placeholder="收货人手机号">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label"><i class="iconfont">&#xe608;</i></label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="选择省、市、区/县">
+                        <i class="iconfont select_address">&#xe623;</i>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label"><i class="iconfont">&#xe61c;</i></label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="详细地址">
+                    </div>
+                </div>
+            </div>
+            <div class="weui-btn-area">
+                <a class="weui-btn weui-btn_primary finish" href="/user/address.do">保存</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+
+    })
+</script>
+</body>
+</html>

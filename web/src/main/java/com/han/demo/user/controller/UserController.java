@@ -32,4 +32,24 @@ public class UserController {
         System.out.println(1111111);
         return "wx/repair";
     }
+
+    @RequestMapping(value = "voice")
+    public String voice(User user, ModelMap modelMap) {
+        modelMap.addAttribute("user", user);
+        System.out.println(1111111);
+        return "wx/voice";
+    }
+    @RequestMapping(value = "addAddress")
+    public String addAddress(User user, ModelMap modelMap) {
+        modelMap.addAttribute("user", user);
+        System.out.println(1111111);
+        return "wx/addAddress";
+    }
+
+    @RequestMapping(value = "address")
+    public String address(User user, ModelMap modelMap) {
+        modelMap.addAttribute("user", user);
+        System.out.println(1111111);
+        return "wx/address";
+    }
 }
