@@ -116,13 +116,13 @@
     <div class="page_bd">
         <div class="repairs_info">
             <div class="info_item">
-                <div class="repairs_icon">
+                <div class="repairs_icon repair_btn">
                     <i class="iconfont" style="color: #35baf6;">&#xe605;</i>
                 </div>
                 <div class="info_title">报修</div>
             </div>
             <div class="info_item">
-                <div class="repairs_icon">
+                <div class="repairs_icon query_btn">
                      <i class="iconfont">&#xe602;</i>
                 </div>
                 <div class="info_title">查询</div>
@@ -135,7 +135,7 @@
             <i class="iconfont" style="font-size: 20px;">&#xe61a;</i>
             <p class="weui-tabbar__label">首页</p>
         </a>
-        <a href="javascript:;" class="weui-tabbar__item">
+        <a href="/user/myOrder.do" class="weui-tabbar__item">
                 <span style="display: inline-block;position: relative;">
                     <i class="iconfont" style="font-size: 20px;">&#xe619;</i>
                 </span>
@@ -145,8 +145,12 @@
 </div>
 <script type="text/javascript">
     $(function() {
-        $('.info_item').click(function() {
+        $('.info_item .repair_btn').click(function() {
             window.location.href='/user/repair.do'
+        })
+
+        $('.info_item .query_btn').click(function() {
+            window.location.href='/user/myOrder.do'
         })
     })
 </script>

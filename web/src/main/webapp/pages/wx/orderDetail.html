@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>呼叫单详情</title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <link type="text/css" href="https://res.wx.qq.com/open/libs/weui/1.1.0/weui.min.css" rel="stylesheet">
+    <style type="text/css">
+        .container {
+            font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+            color: #222;
+            font-size: 14px;
+        }
+        @font-face {
+            font-family: 'iconfont';  /* project id 271690 */
+            src: url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.eot');
+            src: url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.woff') format('woff'),
+            url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_ievs7oz1k5nopqfr.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:20px;font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .navbar {
+            width:100%;
+            height: 50px;
+            line-height: 47px;
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+        }
+        .navbar__item {
+            width:50%;
+            float: left;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .order_item {
+            padding:10px 20px;
+            background-color: #ffffff;
+            margin-bottom:10px;
+        }
+        .item_header {
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+            font-size: 14px;
+            position: relative;
+        }
+        .item_btn {
+            position: absolute;
+            top:5px;
+            right:5px;
+            background: url("../../images/WX-H5-37.png") no-repeat -10px -6px;
+        }
+        .header_con{
+            width:50%;
+            float: left;
+        }
+        .item_desc {
+            font-size: 12px;
+            color: #999;
+            height: 25px;
+            line-height: 25px;
+        }
+        .order_space {
+            height:8px;
+            background-color: #f8f8f8;
+        }
+        .voice_content {
+            height: 120px;
+        }
+        .voice_item {
+            padding:5px 20px;
+            overflow: hidden;
+        }
+        .voice_item .head_photo{
+            width: 40px;
+            height: 40px;
+            border-radius:50%;
+            overflow:hidden;
+            float: left;
+        }
+        .voice_item .voice_show {
+            position: relative;
+            overflow: hidden;
+            height: 30px;
+            width: 100px;
+            padding: 5px 10px;
+        }
+        .voice_item i.voice_icon {
+            font-size: 15px;
+            position: absolute;
+            left: 20px;
+            top: 9px;
+        }
+        .voice_item img {
+            float: left;
+            height: 30px;
+            width: 100px;
+        }
+        .weui-uploader__files li {
+            width:76px;
+            height:76px;
+        }
+    </style>
+</head>
+<body>
+<div class="container orderlist">
+    <div class="page_bd">
+        <div class="order_list">
+            <div class="order_item">
+                <div class="item_header">
+                    <div class="header_con">待受理</div>
+                    <a class="weui-btn weui-btn_mini item_btn" href="">取消</a>
+                </div>
+                <div class="item_content">
+                    <div class="item_desc">发起人:韩秀娟</div>
+                    <div class="item_desc">呼叫时间:2017年4月8日 14:00</div>
+                    <div class="item_desc">服务地址: 上海 上海市 徐汇区 钦州南路71号9楼</div>
+                </div>
+            </div>
+            <div class="order_space"></div>
+            <div class="order_item">
+                <div class="item_header">
+                    <div class="header_con">报修照片</div>
+                </div>
+                <div class="item_content">
+                    <div class="weui-cell__bd">
+                        <div class="weui-uploader">
+                            <div class="weui-uploader__bd">
+                                <ul class="weui-uploader__files" id="uploaderFiles">
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/1.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/2.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/3.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/1.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/2.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/3.jpg)"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order_space"></div>
+            <div class="order_item">
+                <div class="item_header">
+                    <div class="header_con">报修语音</div>
+                </div>
+                <div class="item_content">
+                    <div class="voice_content">
+                        <div class="voice_list">
+                            <div class="voice_item">
+                                <img class="head_photo" src="../../images/banner.jpg"/>
+                                <div class="voice_show">
+                                    <img src="../../images/WX-H5-36.png"/>
+                                    <i class="iconfont voice_icon">&#xe615;</i>
+                                </div>
+                            </div>
+                            <div class="voice_item">
+                                <img class="head_photo" src="../../images/banner.jpg"/>
+                                <div class="voice_show" style="width:200px;">
+                                    <img src="../../images/WX-H5-36.png" style="width: 200px"/>
+                                    <i class="iconfont voice_icon">&#xe615;</i>
+                                    <i class="iconfont delete_icon">&#xe616;</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order_space"></div>
+        </div>
+    </div>
+
+    <div class="weui-tabbar">
+        <a href="javascript:;" class="weui-tabbar__item">
+            <i class="iconfont">&#xe61a;</i>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="/user/myOrder.do" class="weui-tabbar__item">
+                <span style="display: inline-block;position: relative;">
+                    <i class="iconfont">&#xe619;</i>
+                </span>
+            <p class="weui-tabbar__label">我</p>
+        </a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+
+    })
+</script>
+</body>
+</html>

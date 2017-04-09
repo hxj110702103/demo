@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title></title>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <link type="text/css" href="https://res.wx.qq.com/open/libs/weui/1.1.0/weui.min.css" rel="stylesheet">
+    <style type="text/css">
+        .container {
+            font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+            color: #222;
+            font-size: 14px;
+        }
+        @font-face {
+            font-family: 'iconfont';  /* project id 271690 */
+            src: url('//at.alicdn.com/t/font_eifxfrb61xajor.eot');
+            src: url('//at.alicdn.com/t/font_eifxfrb61xajor.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_eifxfrb61xajor.woff') format('woff'),
+            url('//at.alicdn.com/t/font_eifxfrb61xajor.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_eifxfrb61xajor.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:20px;font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .navbar {
+            width:100%;
+            height: 50px;
+            line-height: 47px;
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+        }
+        .navbar__item {
+            width:50%;
+            float: left;
+            text-align: center;
+            font-size: 15px;
+        }
+        .bar__item_on {
+            color: #35baf6;
+            border-bottom: 3px solid #35baf6;
+        }
+
+        .order_item {
+            padding:10px 20px;
+            background-color: #ffffff;
+            margin-bottom:10px;
+        }
+        .item_header {
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+            font-size: 14px;
+            position: relative;
+        }
+        .item_header_status {
+            font-size: 13px;
+        }
+        .item_header .extanded, .item_header .closed {
+            font-size: 10px;
+            padding: 0px 5px;
+        }
+        .item_header .confirm_btn{
+            color:#222;
+            background: url("../../images/WX-H5-36.png") no-repeat -10px -6px;
+        }
+        .item_header .complaint_btn {
+            background: url("../../images/WX-H5-37.png") no-repeat -10px -6px;
+        }
+        .item_btn {
+            position: absolute;
+            top:5px;
+            right:5px;
+            background: url("../../images/WX-H5-37.png") no-repeat -10px -6px;
+        }
+        .header_con{
+            width:50%;
+            float: left;
+        }
+        .header_right {
+            float: right;
+            width: 40%;
+            text-align: right;
+        }
+        .header_right i {
+            font-size: 12px;
+            padding-left: 20px;
+        }
+        .item_desc {
+            font-size: 12px;
+            color: #999;
+            height: 25px;
+            line-height: 25px;
+        }
+        .order_space {
+            height:8px;
+            background-color: #f8f8f8;
+        }
+        .order_desc {
+            overflow: hidden;
+        }
+        .order_desc_item {
+            float: left;
+            padding:0 2px;
+            font-size: 12px;
+            color: #999;
+            height:25px;
+            line-height: 25px;
+        }
+        .order_desc_item.odi_desc {
+            width:22%
+        }
+        .order_desc_item.odi_time {
+            width:30%
+        }
+        .order_desc_item.odi_worker {
+            width:40%
+        }
+        .weui-btn+.weui-btn {
+            margin-top:0;
+        }
+        .weui-uploader__file {
+            width:59px;
+            height:59px;
+        }
+    </style>
+</head>
+<body>
+<div class="container orderlist">
+    <div class="page_hd">
+        <div class="navbar">
+            <div data-type="myOrder" class="navbar__item bar__item_on">
+                我的呼叫
+            </div>
+            <div data-type="allOrder" class="navbar__item">
+                所有工单
+            </div>
+        </div>
+    </div>
+
+    <div class="page_bd">
+        <div class="order_list" data-type="myOrder">
+            <div class="order_item">
+                <div class="item_header">
+                    <div class="header_con">待受理</div>
+                    <a class="weui-btn weui-btn_mini item_btn" href="">取消</a>
+                </div>
+                <div class="item_content">
+                    <div class="item_desc">呼叫时间:2017年4月8日 14:00</div>
+                    <div class="item_desc">服务地址: 上海 上海市 徐汇区 钦州南路71号9楼</div>
+                </div>
+            </div>
+            <div class="order_space"></div>
+            <div class="order_item">
+                <div class="item_header">
+                    <div class="header_con">已受理</div>
+                    <a class="weui-btn weui-btn_mini item_btn" href="">完成</a>
+                </div>
+                <div class="item_content">
+                    <div class="item_desc">呼叫时间:2017年4月8日 14:00</div>
+                    <div class="item_desc">服务地址: 上海 上海市 徐汇区 钦州南路71号9楼</div>
+                </div>
+                <div class="item_header">
+                    <div class="header_con">工单明细</div>
+                </div>
+                <div class="order_desc">
+                    <div class="order_desc_item odi_desc">外门锁损坏</div>
+                    <div class="order_desc_item odi_time">2017.4.4 09:30</div>
+                    <div class="order_desc_item odi_worker">韩师傅13817556575</div>
+                </div>
+                <div class="order_desc">
+                    <div class="order_desc_item odi_desc">下水道堵塞</div>
+                    <div class="order_desc_item odi_time">已完成</div>
+                    <div class="order_desc_item odi_worker">代师傅13501749878</div>
+                </div>
+            </div>
+            <div class="order_space"></div>
+            <div class="order_item">
+                <div class="item_header">
+                    <div class="header_con">已取消</div>
+                </div>
+                <div class="item_content">
+                    <div class="item_desc">呼叫时间:2017年4月8日 14:00</div>
+                    <div class="item_desc">服务地址: 上海 上海市 徐汇区 钦州南路71号9楼</div>
+                    <div class="item_desc">取消理由:恢复正常了，不要修理了</div>
+                </div>
+            </div>
+            <div class="order_space"></div>
+        </div>
+
+        <div class="order_list" data-type="allOrder" style="display: none">
+            <div class="order_item">
+                <div class="item_header item_header_status">
+                    <div class="header_con">R170400801</div>
+                    <div class="header_right">状态: 待上门<i class="iconfont">&#xe623;</i> </div>
+                </div>
+                <div class="item_content">
+                    <div class="item_desc">发  起  人: 韩秀娟</div>
+                    <div class="item_desc">呼叫时间: 2017年4月8日 14:00</div>
+                    <div class="item_desc">服务地址: 上海 上海市 徐汇区 钦州南路71号9楼</div>
+                    <div class="item_desc">预约时间: 2017.4.4 9:30 韩师傅13817556575</div>
+                    <div class="item_desc">故障现象: 设施>门>门锁>外门锁损坏</div>
+                </div>
+                <div class="item_header item_header_status">
+                    <div class="header_con">收起<i class="iconfont extanded">&#xe600;</i></div>
+                    <div class="header_right">
+                        <a class="weui-btn weui-btn_mini confirm_btn" href="">确定</a>
+                        <a class="weui-btn weui-btn_mini complaint_btn" href="">投诉</a>
+                    </div>
+                </div>
+                <div class="item_header item_header_status">
+                    <div class="header_con">报修照片</div>
+                </div>
+                <div class="item_content">
+                    <div class="weui-cell__bd">
+                        <div class="weui-uploader">
+                            <div class="weui-uploader__bd">
+                                <ul class="weui-uploader__files">
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/1.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/2.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/3.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/1.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/2.jpg)"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item_header item_header_status">
+                    <div class="header_con">完工照片</div>
+                </div>
+                <div class="item_content">
+                    <div class="weui-cell__bd">
+                        <div class="weui-uploader">
+                            <div class="weui-uploader__bd">
+                                <ul class="weui-uploader__files">
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/1.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/2.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/3.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/1.jpg)"></li>
+                                    <li class="weui-uploader__file" style="background-image:url(../../images/2.jpg)"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order_space"></div>
+            <div class="order_item">
+                <div class="item_header item_header_status">
+                    <div class="header_con">R170400801</div>
+                    <div class="header_right">状态: 已完修<i class="iconfont">&#xe623;</i> </div>
+                </div>
+                <div class="item_content">
+                    <div class="item_desc">发  起  人: 韩秀娟</div>
+                    <div class="item_desc">呼叫时间: 2017年4月8日 14:00</div>
+                    <div class="item_desc">服务地址: 上海 上海市 徐汇区 钦州南路71号9楼</div>
+                    <div class="item_desc">预约时间: 2017.4.4 9:30 韩师傅13817556575</div>
+                    <div class="item_desc">完成时间: 2017.4.5 9:30</div>
+                    <div class="item_desc">故障现象: 设施>门>门锁>外门锁损坏</div>
+                </div>
+                <div class="item_header item_header_status">
+                    <div class="header_con">展开<i class="iconfont closed">&#xe604;</i></div>
+                    <div class="header_right">
+                        <a class="weui-btn weui-btn_mini confirm_btn" href="">确定</a>
+                        <a class="weui-btn weui-btn_mini complaint_btn" href="">投诉</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui-tabbar">
+        <a href="javascript:;" class="weui-tabbar__item">
+            <i class="iconfont">&#xe61a;</i>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="/user/myOrder.do" class="weui-tabbar__item">
+                <span style="display: inline-block;position: relative;">
+                    <i class="iconfont">&#xe619;</i>
+                </span>
+            <p class="weui-tabbar__label">我</p>
+        </a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $('.order_item').click(function () {
+            window.location.href='/user/orderDetail.do'
+        })
+
+        $('.navbar .navbar__item').click(function () {
+            $('.navbar .navbar__item').removeClass('bar__item_on');
+            $(this).addClass('bar__item_on');
+            $('.order_list').hide();
+            $('.order_list[data-type='+ $(this).data('type')+']').show();
+        })
+    })
+</script>
+</body>
+</html>

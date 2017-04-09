@@ -52,4 +52,25 @@ public class UserController {
         System.out.println(1111111);
         return "wx/address";
     }
+
+    @RequestMapping(value = "myOrder")
+    public String myOrder(User user, ModelMap modelMap) {
+        modelMap.addAttribute("user", user);
+        System.out.println(1111111);
+        return "wx/myOrder";
+    }
+
+    @RequestMapping(value = "orderDetail")
+    public String orderDetail(User user, ModelMap modelMap) {
+        modelMap.addAttribute("user", user);
+        System.out.println(1111111);
+        return "wx/orderDetail";
+    }
+
+    @RequestMapping(value = "myself")
+    public String myself(User user, ModelMap modelMap) {
+        modelMap.addAttribute("user", user);
+        System.out.println(1111111);
+        return "wx/myself";
+    }
 }
