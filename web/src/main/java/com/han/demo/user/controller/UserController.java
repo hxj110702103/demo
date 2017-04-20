@@ -71,6 +71,6 @@ public class UserController {
     public String myself(User user, ModelMap modelMap) {
         modelMap.addAttribute("user", user);
         System.out.println(1111111);
-        return "wx/myself";
+        return "wx/orderStatus";
     }
 }
